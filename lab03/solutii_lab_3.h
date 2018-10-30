@@ -6,6 +6,7 @@
 #define MIN_TRECERE 5
 #define CALC_MEDIA(student)                                                    \
   0.4 * (student.nota_mate + student.nota_info) + 0.2 * student.nota_bac
+#define MAX_ELEMS_POLY 50
 
 typedef struct {
   int nr_legitimatie;
@@ -28,6 +29,9 @@ typedef struct {
   int count_elems;
 } SparseMatrix;
 
-// TODO: struct polinom
+typedef struct {
+  int degree;
+  int coefs[MAX_ELEMS_POLY];
+} Polynomial;
 
 #endif // SOLUTII_LAB_3_H_

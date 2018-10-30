@@ -266,9 +266,65 @@ void test_ex_4() {
   print_sparse_matrix(multiplied);
 }
 
+Polynomial read_polynomial() {
+  Polynomial p;
+
+  printf("Introduceti gradul, apoi coeficientii polinomului "
+    "(incepand cu 0)\n");
+
+  scanf(" %d", &p.degree);
+
+  for (int i = 0; i <= p.degree; i++) {
+    scanf(" %d", &p.coefs[i]);
+  }
+
+  return p;
+}
+
+void print_polynomial(Polynomial p) {
+  for (int i = p.degree; i >= 0; i--) {
+    printf("%d * x^%d", p.coefs[i], i);
+    if (i != 0) printf(" + ");
+  }
+
+  printf("\n");
+} 
+
+Polynomial multiply_polynomials(Polynomial p1, Polynomial p2) {
+  Polynomial result;
+  result.degree = p1.degree + p2.degree;
+
+  // Initializam coeficientii rezultatului cu 0.
+  for (int i = 0; i <= result.degree; i++) {
+    result.coefs[i] = 0;
+  }
+
+  for (int i = 0; i <= p1.degree; i++) {
+    for (int j = 0; j <= p2.degree; j++) {
+      result.coefs[i + j] += p1.coefs[i] * p2.coefs[j];
+    }
+  }
+
+  return result;
+}
+
+void test_ex_5() {
+  Polynomial p1 = read_polynomial();
+  Polynomial p2 = read_polynomial();
+
+  Polynomial result = multiply_polynomials(p1, p2);
+  printf("Rezultatul inmultirii lui:\n");
+  print_polynomial(p1);
+  printf(" cu ");
+  print_polynomial(p2);
+  printf(" este ");
+  print_polynomial(result);
+}
+
 int main() {
   // test_ex_1();
   // test_ex_2();
   // test_ex_3();
-  test_ex_4();
+  // test_ex_4();
+  test_ex_5();
 }
