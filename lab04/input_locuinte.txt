@@ -1,0 +1,16 @@
+5
+Strada X Nr y 
+60 garsoniera 1 
+1
+Strada Florilor Nr 50
+100 casa 10 
+parter+mansarda
+Strada Icoanei Nr 1034
+120 garsoniera 1 
+1
+Strada Garoafei nr 204
+40 garsoniera 1 
+1
+Strada invierii nr 90
+200 casa 4
+nr_etaje:3

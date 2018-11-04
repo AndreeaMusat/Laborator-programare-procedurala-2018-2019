@@ -1,0 +1,11 @@
+### Laborator 4
+
+Structura Locuinta pentru exercitiul 2 este in locuinta.h
+
+Structura Angajat pentru exercitiul 3 este in angajati.h
+
+Restul structurilor sunt in extra.h
+
+input_locuinte.txt si input_angajat.txt reprezinta exemple de inputuri pentru un vector de n locuinte, respectiv pentru un angajat.
+
+Formatul input_locuinte.txt este explicat in locuinta.h
