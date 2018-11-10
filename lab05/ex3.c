@@ -62,7 +62,7 @@ void print_long_integer(LongInteger li) {
   }
 
   if (li.sign == -1)
-  	printf(")");
+    printf(")");
 }
 
 // li trebuie pasat ca pointer. Daca il pasam ca LongInteger li,
@@ -133,7 +133,8 @@ void remove_leading_zeros_long_integer(LongInteger *li) {
   for (int i = li->num_digits - 1; i >= 0; i--) {
     if (li->digits[i] == 0) {
       li->num_digits--;
-    } else break;
+    } else
+      break;
   }
 }
 
@@ -231,7 +232,7 @@ int main() {
   LongInteger result;
 
   while (cnt++ < num_tests) {
-  	printf("Testul %d\n", cnt);
+    printf("Testul %d\n", cnt);
     LongInteger num1 = read_long_integer();
     LongInteger num2 = read_long_integer();
     result = add_signed_long_integers(num1, num2);
