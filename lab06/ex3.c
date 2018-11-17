@@ -32,9 +32,10 @@ int check_closed_multiline_comment(const char* line) {
 // Facem o presupunere simplificatoare:
 // un comentariu ocupa mereu intreaga linie 
 // (deci nu exista situatii de genul:
-// int x   // bla bla bla
+// int x;   // bla bla bla
 //    sau
-// printf(" // hello \n"
+// int X;    /*  comentariu pe 
+//   mai multe linii */ 
 // ))
 void read_and_remove_comments(const char* file_name) {
 	// Deschid fisierul in mod citire (implicit text)
