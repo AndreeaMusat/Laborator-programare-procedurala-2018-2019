@@ -99,7 +99,7 @@ void modificare(char *nume_fisier_binar, int id, float nota) {
 void adaugare(char *nume_fisier_binar, Student stud) {
   // Deschid fisierul in modul "append" pentru a adauga un nou
   // student la finalul acestuia
-  FILE *f = fopen(nume_fisier_binar, "a");
+  FILE *f = fopen(nume_fisier_binar, "ab");
   exit_if_null_file(nume_fisier_binar, f);
 
   fwrite(&stud, sizeof(Student), 1, f);
@@ -130,7 +130,7 @@ void test() {
 
   // Modific nota studentului cu id 9999 (inexistent - se afiseaza mesaj de
   // eroare)
-  modificare("all_students.bin", 9999, 10.0);
+  // modificare("all_students.bin", 9999, 10.0);
 }
 
 int main() {
