@@ -113,7 +113,7 @@ void calcul_produs(NumarMare num1, NumarMare num2, NumarMare *result) {
       (num2.data[0] == 1 && num2.data[1] == '0')) {
     result->data = (unsigned char *)calloc(2, sizeof(unsigned char));
     result->data[0] = 1;
-    result->data[1] = 0;
+    result->data[1] = '0';
     return;
   }
 
@@ -128,14 +128,13 @@ void calcul_produs(NumarMare num1, NumarMare num2, NumarMare *result) {
   // Cand adaug la result inmultirea cu digitul i din num2, trebuie sa shiftez
   // rezultatul curent cu i - 1 pozitii:
   // De exemplu:
-  // 			1259 x
+  // 		    1259 x
   // 		   27381
-  //     ---------
-  //          1259	-> La i = 0, pun 1259 in result
-  // 		  10072		-> La i = 1, adun rezultatul inmultirii curente (10072),
-  // dar incepand cu indexul 1
+  //       ---------
+  //            1259		-> La i = 0, pun 1259 in result
+  // 		   10072		-> La i = 1, adun rezultatul inmultirii curente (10072), dar incepand cu indexul 1
   // 		  3777
-  //        etc
+  //    	etc
   for (int i = 1; i <= num2.data[0]; i++) {
     char tmp_result[2 + num1.data[0]];
     memset(tmp_result, 0, sizeof(tmp_result));
